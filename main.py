@@ -16,7 +16,7 @@ def Employee():
 def Customer():
     ## customer_order will be storing the objects of the pizza order
     customer_order = []
-    location = ["london", "newcastle"]
+    location = ["london", "newcastle", "bath", "liverpool", "kent"]
     orderNumber = 0
     print("this is the customer interface")
     new_customer = customer.Customer(name)
@@ -45,7 +45,7 @@ def Customer():
 
     customer_location = input("which branch would you like to order from: ")
 
-    while True:
+    while customer_location not in location:
         if customer_location in location:
             print("location exists")
             new_branch = branch.Branch(customer_location)
@@ -55,6 +55,8 @@ def Customer():
         else:
             print("location does not exist")
             print(location)
+            break
+
 
 
 
