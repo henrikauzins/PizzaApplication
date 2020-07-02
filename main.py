@@ -1,6 +1,10 @@
+#importing py classes
 import employee
 import customer
 import base
+import topping
+import branch
+import pizza
 
 
 
@@ -10,6 +14,7 @@ def Employee():
     new_employee = employee.Employee(name, rank)
 
 def Customer():
+    ## customer_order will be storing the objects of the pizza order
     customer_order = []
     location = ["london", "newcastle"]
     orderNumber = 0
@@ -17,14 +22,20 @@ def Customer():
     new_customer = customer.Customer(name)
     print(new_customer.name)
 
-    pizza = input("what pizza would you like?")
-    customer_order.append(pizza)
+    pizza_name = input("what pizza would you like?")
+
 
     pizza_type = input("what pizza type would you like?")
-    customer_order.append(pizza_type)
+
+
+    new_pizza = pizza.Pizza(pizza_name, pizza_type)
+
+    customer_order.append(new_pizza)
+
 
     pizza_topping = input("what pizza topping would you like?")
-    customer_order.append(pizza_topping)
+    new_topping = topping.Topping(pizza_topping)
+    customer_order.append(new_topping)
 
     pizza_base = input("what size pizza base would you like?")
     customer_order.append(pizza_base)
@@ -37,20 +48,23 @@ def Customer():
     while True:
         if customer_location in location:
             print("location exists")
-            customer_order.append(customer_location)
+            new_branch = branch.Branch(customer_location)
+            customer_order.append(new_branch)
             break
 
         else:
             print("location does not exist")
             print(location)
 
-    print("Order Summary")
-    print(customer_order)
+
+
 
     orderNumber = orderNumber + 1
 
-    print(orderNumber)
+    customer_order.append(orderNumber)
 
+    print("Order Summary")
+    print(customer_order)
 
 name = input("what is your name: ")
 user_type = input("are you a customer or employee: ")
