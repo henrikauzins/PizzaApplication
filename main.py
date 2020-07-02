@@ -43,6 +43,7 @@ def Customer():
             print("location does not exist")
             print(location)
 
+    print("Order Summary")
     print(customer_order)
 
     orderNumber = orderNumber + 1
