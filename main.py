@@ -12,6 +12,7 @@ def Employee():
     print("this is the employee interface")
     rank = input("what is your rank: ")
     new_employee = employee.Employee(name, rank)
+    print(new_employee)
 
 def Customer():
     ## customer_order will be storing the objects of the pizza order
