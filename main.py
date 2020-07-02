@@ -30,6 +30,7 @@ def Customer():
     customer_order.append(pizza_base)
     #new base object initialised
     new_base = base.Base(pizza_base)
+    new_base.GetBase(pizza_base)
 
     customer_location = input("which branch would you like to order from: ")
 
