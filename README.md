@@ -1,2 +1,2 @@
 # PizzaApplication
-in progress pizza delivery application written using Python
+in progress pizza ordering application written using Python
