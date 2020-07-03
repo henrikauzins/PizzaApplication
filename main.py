@@ -74,6 +74,7 @@ def OrderingSystem():
 
     print("Order Summary")
     print(customer_order)
+    #add dictionary for total prices of items on the customers order
     placed = "order placed"
     not_placed = "order not placed"
 
