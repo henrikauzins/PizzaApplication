@@ -16,6 +16,8 @@ def Employee():
     print(new_employee)
 
 def Customer():
+    placed = "order placed"
+    not_placed = "order not placed"
 
     print("this is the customer interface")
     name = input("what is your name: ")
