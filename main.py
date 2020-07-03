@@ -73,14 +73,16 @@ def OrderingSystem():
 
     print("Order Summary")
     print(customer_order)
+    placed = "order placed"
+    not_placed = "order not placed"
 
     place_order = input("would you like to place your order: ")
 
     if place_order == "yes":
-        print("order has been placed")
+        print(bool(placed))
         main()
     elif place_order == "no":
-        print("order has been deleted")
+        print(bool(not_placed))
         customer_order.clear()
         main()
 
