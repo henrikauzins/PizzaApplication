@@ -56,11 +56,7 @@ def Customer():
         else:
             print("location does not exist")
             print(location)
-            break
-
-
-
-
+            customer_location = input("which branch would you like to order from: ")
 
     orderNumber = orderNumber + 1
 
@@ -68,6 +64,9 @@ def Customer():
 
     print("Order Summary")
     print(customer_order)
+
+
+
 
 name = input("what is your name: ")
 user_type = input("are you a customer or employee: ")
