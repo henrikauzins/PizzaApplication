@@ -33,6 +33,7 @@ def Customer():
 def OrderingSystem():
     ## customer_order will be storing the objects of the pizza order
     customer_order = []
+    toppings = {"cheese": 0.86, "sausage": 0.90, "ham": 1.0}
     location = ["london", "newcastle", "bath", "liverpool", "kent"]
     orderNumber = 0
     pizza_name = input("what pizza would you like?")
