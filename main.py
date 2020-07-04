@@ -29,8 +29,10 @@ def Customer():
     OrderingSystem()
 
 def CheckToppings():
+    print("availible Toppings")
 
 def CheckPizzaTypes():
+    print("availible pizza types")
 
 
 def OrderingSystem():
