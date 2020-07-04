@@ -28,6 +28,9 @@ def Customer():
     #calls the ordering system function
     OrderingSystem()
 
+def CheckToppings():
+
+def CheckPizzaTypes():
 
 
 def OrderingSystem():
