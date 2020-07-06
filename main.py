@@ -37,21 +37,55 @@ def CheckPizzaTypes():
 
 def OrderingSystem():
     ## customer_order will be storing the objects of the pizza order
+
+    #stores order details
     customer_order = []
+    #stores prices of order elements
     total_price = []
 
     location = ["london", "newcastle", "bath", "liverpool", "kent"]
     orderNumber = 0
 
-    pizza_name = input("what pizza would you like?")
-    pizza_choices = {"margherita": 10, "pepperoni": 11, "hawaiian": 10, "meat feast": 12, "bbq chicken": 13}
+    while True:
+        pizza_name = input("what pizza would you like?")
+        pizza_choices = {"margherita": 10.00, "pepperoni": 11.00, "hawaiian": 10.00, "meat feast": 12.00, "bbq chicken": 13.00}
 
-    pizza_type = input("what pizza type would you like?")
-    pizza_types = {"deep dish": 4, "sicilian": 5, "greek": 6, "calzone": 7, "neapolitan": 8, "new york style": 9}
+        if pizza_name in pizza_choices:
+            print(pizza_name, "exists")
+        # prints cost of selected topping
+            print("this will cost you £", pizza_choices[pizza_name])
+            total_price.append(pizza_choices[pizza_name])
+            print(total_price)
+            break
 
-    new_pizza = pizza.Pizza(pizza_name, pizza_type)
 
-    customer_order.append(new_pizza)
+
+        # if inputted base does not exist
+        elif pizza_name not in pizza_choices:
+            print(pizza_name, "is not on offer")
+
+    while True:
+        pizza_type = input("what pizza type would you like?")
+        pizza_types = {"deep dish": 4.00, "sicilian": 5.00, "greek": 6.00, "calzone": 7.00, "neapolitan": 8.00, "new york style": 9.00}
+
+
+
+        if pizza_type in pizza_types:
+                print(pizza_type, "exists")
+            # prints cost of selected pizza type
+                print("this will cost you £", pizza_types[pizza_type])
+                total_price.append(pizza_types[pizza_type])
+                print(total_price)
+                break
+
+
+
+        elif pizza_type not in pizza_types:
+                print(pizza_type, "is not on offer")
+
+        new_pizza = pizza.Pizza(pizza_name, pizza_type)
+
+        customer_order.append(new_pizza)
 
     while True:
 
@@ -69,16 +103,33 @@ def OrderingSystem():
 
 # if inputted topping does not exist
         elif pizza_topping not in toppings:
-            print(pizza_topping, "is not on offer")
+                print(pizza_topping, "is not on offer")
 
-## choosing a base
-    print("base choices are small, medium or large")
-    pizza_base = input("what size pizza base would you like?")
 
-    base_selection = {"small": 5, "medium": 6, "large": 7}
-    customer_order.append(pizza_base)
-    # new base object initialised
-    new_base = base.Base(pizza_base)
+
+    while True:
+        print("base choices are small, medium or large")
+        pizza_base = input("what size pizza base would you like?")
+
+        base_selection = {"small": 5, "medium": 6, "large": 7}
+
+        if pizza_base in base_selection:
+            print(pizza_base, "exists")
+            # prints cost of selected topping
+            print("this will cost you £", base_selection[pizza_base])
+            total_price.append(base_selection[pizza_base])
+            print(total_price)
+
+            # new base object initialised
+            new_base = base.Base(pizza_base)
+            customer_order.append(new_base)
+            break
+
+        # if inputted base does not exist
+        elif pizza_base not in base_selection:
+            print(pizza_base, "is not on offer")
+
+
 
 
     customer_location = input("which branch would you like to order from: ")
@@ -105,14 +156,19 @@ def OrderingSystem():
     placed = "order placed"
     not_placed = "order not placed"
 
+    print("the total cost of your order is: £", sum(total_price))
+
     place_order = input("would you like to place your order: ")
 
     if place_order == "yes":
         print(bool(placed))
+        customer_order.clear()
+        total_price.clear()
         main()
     elif place_order == "no":
         print(bool(not_placed))
         customer_order.clear()
+        total_price.clear()
         main()
 
 
