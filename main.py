@@ -50,8 +50,15 @@ def OrderingSystem():
     customer_order.append(new_pizza)
 
     pizza_topping = input("what pizza topping would you like?")
-    new_topping = topping.Topping(pizza_topping)
-    customer_order.append(new_topping)
+
+    if pizza_topping in toppings:
+        print(pizza_topping, "exists")
+
+    else:
+        print(pizza_topping, "is not on offer")
+
+    #new_topping = topping.Topping(pizza_topping)
+    #customer_order.append(new_topping)
 
     pizza_base = input("what size pizza base would you like?")
     customer_order.append(pizza_base)
