@@ -42,9 +42,12 @@ def OrderingSystem():
 
     location = ["london", "newcastle", "bath", "liverpool", "kent"]
     orderNumber = 0
+
     pizza_name = input("what pizza would you like?")
+    pizza_choices = {"cheese": 0.86, "sausage": 0.90, "ham": 1.0}
 
     pizza_type = input("what pizza type would you like?")
+    pizza_types = {"deep dish": 4, "sicilian": 5, "greek": 6, "calzone": 7, "neapolitan": 8, "new york style": 9}
 
     new_pizza = pizza.Pizza(pizza_name, pizza_type)
 
@@ -56,17 +59,18 @@ def OrderingSystem():
         toppings = {"cheese": 0.86, "sausage": 0.90, "ham": 1.0}
         if pizza_topping in toppings:
             print(pizza_topping, "exists")
-            print("this will cost you", toppings[pizza_topping])
+            #prints cost of selected topping
+            print("this will cost you £",toppings[pizza_topping])
             total_price.append(toppings[pizza_topping])
             print(total_price)
             new_topping = topping.Topping(pizza_topping)
             customer_order.append(new_topping)
             break
 
-
+# if inputted topping does not exist
         elif pizza_topping not in toppings:
             print(pizza_topping, "is not on offer")
-            pizza_topping = input("what pizza topping would you like?")
+
 ## choosing a base
     print("base choices are small, medium or large")
     pizza_base = input("what size pizza base would you like?")
@@ -75,7 +79,7 @@ def OrderingSystem():
     customer_order.append(pizza_base)
     # new base object initialised
     new_base = base.Base(pizza_base)
-    new_base.GetBase(pizza_base)
+
 
     customer_location = input("which branch would you like to order from: ")
 
