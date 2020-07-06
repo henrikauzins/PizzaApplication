@@ -50,25 +50,27 @@ def OrderingSystem():
 
     customer_order.append(new_pizza)
 
-    pizza_topping = input("what pizza topping would you like?")
-    toppings = {"cheese": 0.86, "sausage": 0.90, "ham": 1.0}
-    if pizza_topping in toppings:
-        print(pizza_topping, "exists")
-        print("this will cost you", toppings[pizza_topping])
-        total_price.append(toppings[pizza_topping])
-        print(total_price)
-        new_topping = topping.Topping(pizza_topping)
-        customer_order.append(new_topping)
+    while True:
+
+        pizza_topping = input("what pizza topping would you like?")
+        toppings = {"cheese": 0.86, "sausage": 0.90, "ham": 1.0}
+        if pizza_topping in toppings:
+            print(pizza_topping, "exists")
+            print("this will cost you", toppings[pizza_topping])
+            total_price.append(toppings[pizza_topping])
+            print(total_price)
+            new_topping = topping.Topping(pizza_topping)
+            customer_order.append(new_topping)
+            break
 
 
-    else:
-        print(pizza_topping, "is not on offer")
-
-    #new_topping = topping.Topping(pizza_topping)
-    #customer_order.append(new_topping)
-
+        elif pizza_topping not in toppings:
+            print(pizza_topping, "is not on offer")
+            pizza_topping = input("what pizza topping would you like?")
+## choosing a base
+    print("base choices are small, medium or large")
     pizza_base = input("what size pizza base would you like?")
-    print("choices are small, medium or large")
+
     base_selection = {"small": 5, "medium": 6, "large": 7}
     customer_order.append(pizza_base)
     # new base object initialised
