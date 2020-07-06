@@ -68,6 +68,7 @@ def OrderingSystem():
     #customer_order.append(new_topping)
 
     pizza_base = input("what size pizza base would you like?")
+    print("choices are small, medium or large")
     base_selection = {"small": 5, "medium": 6, "large": 7}
     customer_order.append(pizza_base)
     # new base object initialised
