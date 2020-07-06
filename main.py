@@ -44,7 +44,7 @@ def OrderingSystem():
     orderNumber = 0
 
     pizza_name = input("what pizza would you like?")
-    pizza_choices = {"cheese": 0.86, "sausage": 0.90, "ham": 1.0}
+    pizza_choices = {"margherita": 10, "pepperoni": 11, "hawaiian": 10, "meat feast": 12, "bbq chicken": 13}
 
     pizza_type = input("what pizza type would you like?")
     pizza_types = {"deep dish": 4, "sicilian": 5, "greek": 6, "calzone": 7, "neapolitan": 8, "new york style": 9}
