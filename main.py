@@ -28,11 +28,6 @@ def Customer():
     #calls the ordering system function
     OrderingSystem()
 
-def CheckToppings():
-    print("availible Toppings")
-
-def CheckPizzaTypes():
-    print("availible pizza types")
 
 
 def OrderingSystem():
